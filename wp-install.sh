@@ -10,7 +10,7 @@ sleep 1
 
 #### Install Packages for https and mysql
 apt -y install lynx
-apt -y install apache2
+# apt -y install apache2
 apt -y install mysql-client
 
 ####Install PHP
