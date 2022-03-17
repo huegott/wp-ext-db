@@ -1,20 +1,20 @@
 #cloud-config
-write_files:
-- path: /etc/cloud/cloud.cfg.d/99-custom-networking.cfg
-  permissions: '0644'
-  content: |
-    network: {config: disabled}
-- path: /etc/netplan/config.yaml
-  permissions: '0644'
-  content: |
-    network:
-        version: 2
-        ethernets:
-            ens6:
-                dhcp4: true                             
-            ens7:
-                dhcp4: false
-                addresses: [192.168.10.10/24]  
+# write_files:
+# - path: /etc/cloud/cloud.cfg.d/99-custom-networking.cfg
+#   permissions: '0644'
+#   content: |
+#     network: {config: disabled}
+# - path: /etc/netplan/config.yaml
+#   permissions: '0644'
+#   content: |
+#     network:
+#         version: 2
+#         ethernets:
+#             ens6:
+#                 dhcp4: true                             
+#             ens7:
+#                 dhcp4: false
+#                 addresses: [192.168.10.10/24]  
 
 
 packages:
@@ -22,13 +22,13 @@ packages:
 
 runcmd:
  - echo "runcmd start"
- - rm /etc/netplan/50-cloud-init.yaml
- - rm /etc/netplan/01-netcfg.yaml
- - netplan generate
- - netplan apply
+#  - rm /etc/netplan/50-cloud-init.yaml
+#  - rm /etc/netplan/01-netcfg.yaml
+#  - netplan generate
+#  - netplan apply
  - export db_name="testdb"
  - export db_user="wpuser"
  - export db_password="password1234"
- - git clone https://github.com/huegott/wp-install /tmp/wp-install
+ - git clone https://github.com/huegott/wp-ext-db /tmp/wp-install
  - chmod +x /tmp/wp-install/wp-install.sh
  - /tmp/wp-install/wp-install.sh
