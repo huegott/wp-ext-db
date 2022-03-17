@@ -1,0 +1,14 @@
+#cloud-config
+
+# mysql install v2 script
+runcmd:
+ - echo "runcmd start"
+ - export db_name="testdb"
+ - export db_user="wpuser"
+ - export db_password="password1234"
+ - apt update
+ - apt install -y mysql-server
+ - git clone https://github.com/ionoslabs/mysql-cloud-init /tmp/mysql-cloud-init
+ - chmod +x /tmp/mysql-cloud-init/mysql-installv2.sh
+ - /tmp/mysql-cloud-init/mysql-installv2.sh
+ - echo "runcmd complete"
