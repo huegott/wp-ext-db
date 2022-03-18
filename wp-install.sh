@@ -5,7 +5,7 @@ install_dir="/var/www/html"
 db_name=$db_name
 db_user=$db_user
 db_password=$db_password
-db_host="217.160.150.21"
+db_host=$db_host
 sleep 1
 
 #### Install Packages for https and mysql
