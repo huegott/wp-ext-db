@@ -33,7 +33,6 @@ runcmd:
  - export db_password="password1234"
 #  end db credentials
  - apt update
- - apt upgrade -y
  - apt install -y mysql-server
 #  change repo below for prod release
  - git clone https://github.com/huegott/wp-ext-db /tmp/mysql-cloud-init
