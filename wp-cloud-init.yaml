@@ -22,7 +22,9 @@ runcmd:
  - rm /etc/netplan/01-netcfg.yaml
  - netplan generate
  - netplan apply
+ - sleep 30
  - apt update
+ - apt upgrade -y
  - apt install -y apache2
 #  set db credentials below
  - export db_name="testdb"
