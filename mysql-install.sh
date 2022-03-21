@@ -8,7 +8,8 @@ echo "Creating MySQL user and database"
 
 echo "done"
 
-
+# change mysqlroot user password
+/usr/bin/mysql -u root -e "ALTER USER 'root'@'localhost' IDENTIFIED BY '$db_password';"
 
 # secure Mysql installation
 
@@ -16,6 +17,6 @@ echo "changing bind address"
 
 sed -i "s/.*bind-address.*/bind-address = 0.0.0.0/" /etc/mysql/mysql.conf.d/mysqld.cnf
 
-# change mysqlroot user password
+
 
 service mysql restart
