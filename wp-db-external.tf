@@ -145,10 +145,10 @@ resource "ionoscloud_nic" "terraform-wp1-nic2" {
   lan = 2
   dhcp = false
   ips = ["192.168.10.10"]
-  # depends_on = [
-  #   ionoscloud_server.terraform-wp1,
-  #   ionoscloud_server.terraform-db1
-  # ]
+  depends_on = [
+    ionoscloud_server.terraform-wp1,
+    ionoscloud_server.terraform-db1
+  ]
   }
 # note user data section, base64 encodes the cloud-init-wp-install.yaml file and places in cloud-init user_data for first boot run
   #Mysql DB server creation 
