@@ -10,6 +10,7 @@ write_files:
   content: |
     network:
         version: 2
+        renderer: networkd
         ethernets:
             ens6:
                 dhcp4: false
